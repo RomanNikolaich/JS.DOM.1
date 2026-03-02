@@ -14,7 +14,7 @@ class GoblinCame {
       if (i === 1) {
         box.classList.add('character');
       }
-      container.appendChild(box);
+      container.append(box);
     };
   };
 
@@ -22,13 +22,12 @@ class GoblinCame {
     this.playing = boolean;
     let activeBox = 1;
     
-    const stop = () => playing = true,
-    getBox = index => document.getElementById(`box${index}`),
-    deactivateBox = index =>
-      getBox( index ).className = 'box',
-    activateBox = index =>
-      getBox( index ).className = 'box character',
-    next = () => setTimeout(() => {
+    const getBox = index => document.getElementById(`box${index}`);
+    const deactivateBox = index =>
+      getBox( index ).className = 'box';
+    const activateBox = index =>
+      getBox( index ).className = 'box character';
+    const next = () => setTimeout(() => {
       if ( !this.playing ) {
         return;
       }
